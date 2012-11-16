@@ -1,0 +1,134 @@
+
+@import "settings";
+@import "foundation";
+
+@import url(http://fonts.googleapis.com/css?family=Arvo|Droid+Sans|Droid+Serif:400,700);
+@import url(../webfonts/ss-social.css);
+@import url(../webfonts/ss-standard.css);
+
+/* Colors */
+
+	$green: #00ff00;
+	$red: #ff0000;
+	$blue: #0000ff;
+	$cyan: #00ffff;
+	$yellow: #ffff00;
+	$magenta: #ff00ff;
+	$greylight: #777777;
+	$greydark: #4a4a4a;
+	$greydeep: #0d0d0d;
+	$greyborder: #333333;
+	$black: #000000;
+	$white: #ffffff;
+	$title: #999999;
+	
+body {
+	background: $black;
+}
+
+
+/* Typography */
+
+h1, h3, h5 {
+	color: $title;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: normal;
+}
+
+h2, h4, h6 {
+	color: $title;
+	font-family: 'Droid Serif', serif;
+	font-weight: normal;
+}
+
+body, p {
+	color: $title;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+/* Links */
+
+a {
+	color: $white;
+	@include transition-property(all);
+	@include transition-duration(.25s);
+	@include transition-timing-function(linear);
+	&:hover {
+		color: $white;
+		text-decoration: underline;
+	}
+}
+
+/* Apps */
+
+.apps {
+	background: url(../images/apps/gui.png) no-repeat 50% -55px;
+	background-size: 100%;
+	min-height: 1024px;
+}
+
+.apps .column, 
+.apps .columns {
+	padding: 0;
+}
+
+.name {
+	padding: 0 0 30px;
+}
+
+.off img {
+	opacity: .33;
+}
+
+.control {
+	padding-top: 58px;
+}
+
+.control .light {
+	h5 {
+		margin-bottom: 7px;
+		font-size: 15px;
+		text-align: center;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.control .selected {
+	h5 {
+		color: $white;
+	}
+}
+
+
+/* Reveal Modal */
+
+.reveal-modal {
+	padding-top: 10px;
+	background: rgba(0, 0, 0, .8);
+	border: 3px solid $greyborder;
+	@include border-radius(10px);
+	top: 10px;
+	h2 {
+		color: $white;
+		text-align: center;
+	}
+}
+
+.reveal-modal .close-reveal-modal {
+	color: $greylight;
+	font-size: 4rem;
+	@include text-shadow(inherit);
+	position: absolute;
+	top: 11px;
+	right: 11px;
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+
+
+

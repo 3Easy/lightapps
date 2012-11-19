@@ -49,11 +49,10 @@
   // /* Ajax */ Apps
   $(".app > a").click(function(){
   	var appid = $(this).attr('id');
-/*   	alert("/apps/" + appid + "/" + appid + ".html"); */
+/*   	alert("apps/" + appid + "/" + appid + ".html"); */
 /*
 	  $.ajax({
-		  url: "/apps/" + app + "/" + app + ".html",
-		  cache: false,
+		  url: "apps/book/book.html",
 		  success: function(html){
 		    $("body").append(html);
 		  }

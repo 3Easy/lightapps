@@ -41,7 +41,9 @@
 				</div>
 				<div class="two columns">
 					<div class="app">
-						<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+						<a id="photograb">
+							<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -192,6 +194,7 @@
 	
 	<!-- Book App -->
 	<script src="apps/book/book.js"></script>
+	<link rel="stylesheet" href="apps/book/book.css">
 	<div id="book-app" class="reveal-modal expand">
 		<h2 class="text-centre">Learn Your Colours</h2>
 		<div>
@@ -203,18 +206,7 @@
 	
 	<!-- Colorwheel App -->
 	<script src="apps/colorwheel/colorwheel.js"></script>
-	<style>
-		#canvas {
-			
-		}
-		#picked {
-			
-		}
-		#complement {
-			position: relative;
-			left: 25px;
-		}
-	</style>
+	<link rel="stylesheet" href="apps/colorwheel/colorwheel.css">
 	<div id="colorwheel-app" class="reveal-modal expand">
 		<h2 class="text-centre">Colorwheel</h2>
 		<div>
@@ -231,6 +223,23 @@
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Colorwheel App -->
+	
+	<!-- Photograb App -->
+	<script src="apps/photograb/photograb.js"></script>
+	<link rel="stylesheet" href="apps/photograb/photograb.css">
+	<div id="photograb-app" class="reveal-modal expand">
+		<h2 class="text-centre">Photo Grab</h2>
+		<div>
+		<canvas id="canvas" width="200" height="300"  style="position: absolute; top: 0px; left: 0px;">
+			 Your browser does not support the HTML 5 Canvas. 
+		</canvas>
+		</div>
+		<form style="position: absolute; top: 450px; left: 300px;">
+			<input class="button" id='pic' type="file" accept="image/*" capture="camera" onchange="handlefiles(this.files)">
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Photograb App -->
 	
 	
 	

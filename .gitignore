@@ -1,4 +1,5 @@
 
 # LightApps
 
-.DS_Store
+*.DS_Store*
+resources/*

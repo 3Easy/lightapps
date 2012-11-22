@@ -1,200 +1,133 @@
-window.addEventListener('load', eventWindowLoaded, false);	
-function eventWindowLoaded() {
+// photograb.js - samples a photo, and sends the sampled color to a Light
+//
 
-	sampApp();
-	canvasApp();
-	iPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
-	iPad = navigator.userAgent.toLowerCase().indexOf("iPad");
-	console.log(iPhone, iPad);
+// Every app has an object
+function photograb() {
+
+	function appStart() {
+		sampApp();
+	}
+		
+	this.img = null;
+	this.lastTouch = null;
+	this.appStart = appStart;
+	this.imageLoaded = imageLoaded;
 	
-}
-
-function canvasSupport () {
-  	return Modernizr.canvas;
-}
-
-var context;
-var theCanvas;
-var img;
-var iPhone = false;
-var iPad = false;
-var lastTouch;
-
-function canvasApp(){
+	this.mouseX = 0;
+	this.mouseY = 0;
+			
+	this.theCanvas = document.getElementById('canvas');
+	this.context = this.theCanvas.getContext('2d');
+	console.log("Got context");
+	console.log(screen.width, screen.height);
+	this.theCanvas.width = screen.width;
+	this.theCanvas.height = screen.height;
+	this.context.fillStyle = "#FFFFFF";
+	this.context.fillRect(0, 0, this.theCanvas.width, this.theCanvas.height);
 	
+	this.theCanvas.addEventListener("mousemove", onSampMouseMove, false);
+	this.theCanvas.addEventListener("click", onSampMouseClick, false);
+	this.theCanvas.addEventListener("touchstart", onSampTouchStart, false);
+	this.theCanvas.addEventListener("touchmove", onSampTouchMove, false);
 
-	if (!canvasSupport()) {
-			 return;
-  	} else {
-	    theCanvas = document.getElementById('canvas');
-	    context = theCanvas.getContext('2d');
-	    console.log("Got context");
-	    console.log(screen.width, screen.height);
-	    theCanvas.width = screen.width;
-		theCanvas.height = screen.height;
-
+	
+	function onSampMouseMove(e) {
+		theApp.mouseX = e.clientX - theApp.theCanvas.offsetLeft;
+		theApp.mouseY = e.clientY - theApp.theCanvas.offsetTop;	      
 	}
 	
-	context.fillStyle = "#000000";
-	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-
-	var mouseX;
-	var mouseY;
-
-	function onMouseMove(e) {
-		mouseX=e.clientX-theCanvas.offsetLeft;
-		mouseY=e.clientY-theCanvas.offsetTop;	      
-	}
-	
-	function onMouseClick(e) {
-		console.log("click: " + mouseX + "," + mouseY);
-		imageData=context.getImageData(mouseX,mouseY,1,1);
+	function onSampMouseClick(e) {
+		console.log("click: " + theApp.mouseX + "," + theApp.mouseY);
+		imageData = theApp.context.getImageData(theApp.mouseX,theApp.mouseY,1,1);
 		var red = (imageData.data[0] >> 1) | 0x80;
 		var green = (imageData.data[1] >> 1) | 0x80;
 		var blue = (imageData.data[2] >> 1) | 0x80;
 		console.log("color (" + red.toString(16) + ", " + green.toString(16) + ", " + blue.toString(16) + ")")
-		
-		// This is where we'll call ajaxcolor
-		redstr = red.toString(16);
-		greenstr = green.toString(16);
-		bluestr = blue.toString(16);
-		ajaxstr = "0x" +  greenstr + redstr + bluestr;
-		console.log("ajaxstr: " + ajaxstr);
-		jQuery.ajax({
-			url: '/cgi-bin/ajaxcolor', 
-			data: {color: ajaxstr}
-		});
-
+		currentLight.setlamp(red, green, blue);
 	}
 
-	function onTouchStart(e) {
+	function onSampTouchStart(e) {
 		var touch = e.touches[0];
 		console.log("onTouchStart", touch.clientX, touch.clientY );
-		mouseX=touch.clientX-theCanvas.offsetLeft;
-		mouseY=touch.clientY-theCanvas.offsetTop;
-		console.log("touch: " + mouseX + "," + mouseY);
-		imageData=context.getImageData(mouseX,mouseY,1,1);
+		theApp.mouseX = touch.clientX - theApp.theCanvas.offsetLeft;
+		theApp.mouseY = touch.clientY - theApp.theCanvas.offsetTop;
+		console.log("touch: " + theApp.mouseX + "," + theApp.mouseY);
+		imageData = theApp.context.getImageData(theApp.mouseX,theApp.mouseY,1,1);
 		var red = (imageData.data[0] >> 1) | 0x80;
 		var green = (imageData.data[1] >> 1) | 0x80;
 		var blue = (imageData.data[2] >> 1) | 0x80;
 		console.log("color (" + red.toString(16) + ", " + green.toString(16) + ", " + blue.toString(16) + ")")
-		
-		// This is where we'll call ajaxcolor
-		redstr = red.toString(16);
-		greenstr = green.toString(16);
-		bluestr = blue.toString(16);
-		ajaxstr = "0x" +  greenstr + redstr + bluestr;
-		console.log("ajaxstr: " + ajaxstr);
-		//fillpick(imageData.data[0], imageData.data[1], imageData.data[2]);
-		//fillcomp(imageData.data[0], imageData.data[1], imageData.data[2]);
-		jQuery.ajax({
-			url: '/cgi-bin/ajaxcolor', 
-			data: {color: ajaxstr}
-		});
-		lastTouch = new Date().getTime();
+		currentLight.setlamp(red, green, blue);
+		theApp.lastTouch = new Date().getTime();
 	}
 	
-	function onTouchMove(e) {
+	function onSampTouchMove(e) {
 		console.log("onTouchMove");
 		event.preventDefault();
 		curr = new Date().getTime();
-		if ((curr - lastTouch) > 100) {
-			onTouchStart(e);
+		if ((curr - theApp.lastTouch) > 100) {
+			onSampTouchStart(e);
 		} else {
 			console.log("ignoring");
 		}
 	}
-
 		
-	theCanvas.addEventListener("mousemove", onMouseMove, false);
-	theCanvas.addEventListener("click", onMouseClick, false);
-	theCanvas.addEventListener("touchstart", onTouchStart, false);
-	theCanvas.addEventListener("touchmove", onTouchMove, false);
-
-}
-
-function sampSupport () {
-	if (window.File && window.FileReader && window.FileList && window.Blob) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-function sampApp(){
-
-	if (sampSupport == false) {
-		alert("HTML5 file upload not fully supported!");
-		return;
-	} else {
-		console.log("HTML5 file upload fully supported.");
-	}
-}
-
-function doSomething(){
-	console.log("what would you like me to do?");
-	console.log( $("#pic").val());
-}
-
-function imageLoaded() {
-
-	console.log("imageLoaded");
-
-	// Should we maybe resize based on the image size?
-	console.log(img.width, img.height);
-	var scalefactor;
-
-	if (iPhone > 0) {
-		console.log("iPhone...");
-		context.rotate(0.0);		// Rotate 90 degrees
-
-	}
-
-	// figure out which is bigger, the image or the canvas
-	if ((img.width > theCanvas.width) || (img.height > theCanvas.height)) {
-
-		// Figure out which side needs more scaling
-		bigw = theCanvas.width / img.width;
-		bigh = theCanvas.height / img.height;
-		if (bigh <= bigw) {
-			scalefactor = bigh;
+	
+	function sampSupport () {
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+			return true;
 		} else {
-			scalefactor = bigw;
+			return false;
 		}
-		
-	} else {
-		// We don't have to scale anything.
-		// Which is, you know, nice.
-		console.log("No scaling required.");
-		scalefactor = 1.0;
 	}
-
-	//theCanvas.width = img.width;
-	//theCanvas.height = img.height;
 	
-	//context.scale(scalefactor, scalefactor);
-	context.fillStyle = "#000000";
-	context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-	context.drawImage(img, 0, 0);
+	function sampApp(){
 	
+		if (sampSupport() == false) {
+			alert("HTML5 file upload not fully supported!");
+			return;
+		} else {
+			console.log("HTML5 file upload fully supported.");
+		}
+	}
+	
+	function doSomething(){
+		console.log("what would you like me to do?");
+		console.log( $("#pic").val());
+	}
+	
+	function imageLoaded() {
+	
+		console.log("imageLoaded");
+	
+		// Should we maybe resize based on the image size?
+		console.log(theApp.img.width, theApp.img.height);
+		console.log(theApp);
+	
+		theApp.context.fillStyle = "#000000";
+		theApp.context.fillRect(0, 0, theApp.theCanvas.width, theApp.theCanvas.height);
+		theApp.context.drawImage(theApp.img, 0, 0);
+		
+	}
 }
-	
+
 function handlefiles(tf){
 	console.log("handlefiles got ", tf.length, " files");	
 
-	img = new Image();
-	img.name = "thingy";
-    img.classList.add("obj");
-    img.file = tf[0];
-	img.addEventListener('load', imageLoaded , false);
-    console.log("grabbing ", img.file);
-     
-    var reader = new FileReader();
-    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-    reader.readAsDataURL(tf[0]);
-    while (reader.readyState == false) {
-    	var x = 1;
-    }
-    console.log(img);
+	theApp.img = new Image();
+	theApp.img.name = "thingy";
+	theApp.img.classList.add("obj");
+	theApp.img.file = tf[0];
+	$(theApp.img).load(theApp.imageLoaded);
+	//theApp.img.addEventListener('load', theApp.imageLoaded , false);
+	console.log("grabbing ", theApp.img.file);
+	 
+	var reader = new FileReader();
+	reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(theApp.img);
+	reader.readAsDataURL(tf[0]);
+	while (reader.readyState == false) {
+		var x = 1;
+	}
+	console.log(theApp.img);
 	return;
 }

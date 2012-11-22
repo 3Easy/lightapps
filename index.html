@@ -203,17 +203,29 @@
 	
 	<!-- Colorwheel App -->
 	<script src="apps/colorwheel/colorwheel.js"></script>
+	<style>
+		#canvas {
+			
+		}
+		#picked {
+			
+		}
+		#complement {
+			position: relative;
+			left: 25px;
+		}
+	</style>
 	<div id="colorwheel-app" class="reveal-modal expand">
 		<h2 class="text-centre">Colorwheel</h2>
 		<div>
-			<canvas id="canvas" width="850" height="850"  style="position: absolute; top: 0px; left: 0px;">
-			Your browser does not support the HTML 5 Canvas. 
+			<canvas id="canvas" width="625" height="625">
+				Your browser does not support the HTML 5 Canvas. 
 			</canvas>
-			<canvas id="picked" width="350" height="100"  style="position: absolute; top: 900px; left: 50px;">
-			Your browser does not support the HTML 5 Canvas. 
+			<canvas id="picked" width="300" height="100">
+				Your browser does not support the HTML 5 Canvas. 
 			</canvas>
-			<canvas id="complement" width="350" height="100"  style="position: absolute; top: 900px; left: 450px;">
-			Your browser does not support the HTML 5 Canvas. 
+			<canvas id="complement" width="300" height="100">
+				Your browser does not support the HTML 5 Canvas. 
 			</canvas>
 		</div>
 		<a class="close-reveal-modal">&#215;</a>

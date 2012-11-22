@@ -7,10 +7,15 @@ function photograb() {
 	function appStart() {
 		sampApp();
 	}
+	
+	function appQuit() {
+	
+	}
 		
 	this.img = null;
 	this.lastTouch = null;
 	this.appStart = appStart;
+	this.appQuit = appQuit;
 	this.imageLoaded = imageLoaded;
 	
 	this.mouseX = 0;

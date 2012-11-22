@@ -61,8 +61,8 @@ var theApp = null;
 	  $('.light').removeClass('selected');
 	  $(this).addClass('selected');
 	  var selection = $(this).attr('id');
-	  // console.log(selection);
 	  currentLight = lights[selection];
+	  console.log(currentLight);
   });
   
   // /* Ajax */ Apps
@@ -78,17 +78,33 @@ var theApp = null;
 		});
 */
 	  $("#" + appid + "-app").reveal();
-	  loadapp(appid);
+	  loadApp(appid);
+  });
+  
+  $('.close-reveal-modal').click(function(){
+	 var cross = $(this).parent().attr('id');
+	 var parts = cross.split('-');
+	 var crossid = parts[0];
+	 console.log(crossid);
+	 quitApp(crossid);
   });
     
   // Last One Out, Turn Out The Lights :)
 
 })(jQuery, this);
 
-// Load App
-function loadapp(theid) {
-	  console.log(theid);
-	  evalstr = "theApp = new " + theid + "()";
-	  eval(evalstr);
-	  theApp.appStart();
+// App Start
+function loadApp(theid) {
+	console.log(theid);
+	evalstr = "theApp = new " + theid + "()";
+	eval(evalstr);
+	theApp.appStart();
+}
+
+// App Quit
+function quitApp(theid) {
+	evalstr = "theApp = new " + theid + "()";
+	eval(evalstr);
+	theApp.appQuit();
+	theApp = null;
 }

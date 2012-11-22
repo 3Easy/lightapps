@@ -5993,8 +5993,12 @@ a:hover {
   color: white;
   text-align: center;
 }
+/* line 117, ../sass/app.scss */
+.reveal-modal div {
+  height: 1000px;
+}
 
-/* line 119, ../sass/app.scss */
+/* line 122, ../sass/app.scss */
 .reveal-modal .close-reveal-modal {
   color: #777777;
   font-size: 4rem;
@@ -6003,7 +6007,7 @@ a:hover {
   top: 11px;
   right: 11px;
 }
-/* line 126, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 .reveal-modal .close-reveal-modal:hover {
   color: white;
   text-decoration: none;

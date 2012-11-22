@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=850" />
-<title>ColorWheel by Moore&rsquo;sCloud</title>
-<script src="modernizr-1.6.min.js"></script>
-<script src="jquery.js"></script>
-<script type="text/javascript">
+
 
 window.addEventListener('load', eventWindowLoaded, false);	
 
 function eventWindowLoaded() {
 	canvasApp();
+	
 }
 
 function canvasSupport () {
@@ -19,6 +12,8 @@ function canvasSupport () {
 }
 
 function canvasApp() {
+	
+	console.log("Colorwheeeeeeel")
 
 	if (!canvasSupport()) {
 			 return;
@@ -41,12 +36,13 @@ function canvasApp() {
 	
 	var tileSheet=new Image();
 	tileSheet.addEventListener('load', eventSheetLoaded , false);
-	tileSheet.src="color_wheel.png";
+	tileSheet.src="http://lightapps/images/apps/app-colorwheel.png";
 	
 	//var imageData=context.createImageData(32,32);
 	
 	function eventSheetLoaded() {
 		startUp();
+		console.log('We’re loaded!')
 	}
 
 	function startUp() {
@@ -160,47 +156,3 @@ function canvasApp() {
 	
 }
 
-
-</script>
-<style>
-	html, body {
-		margin: 0;
-		padding: 0;
-		background: #000;
-		width: 632px;
-		height: 800px;
-	}
-	#pick, #comp {
-		color: #fff;
-		font-family: "Helvetica Neue";
-		font-size: 50px;
-		text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
-		position: absolute;
-		top: 865px;
-	}
-	#pick {
-		left: 150px;
-	}
-	#comp {
-		left: 485px
-	}
-</style>
-</head>
-<body>
-	<div>
-		<canvas id="canvas" width="850" height="850"  style="position: absolute; top: 0px; left: 0px;">
-		Your browser does not support the HTML 5 Canvas. 
-		</canvas>
-		<canvas id="picked" width="350" height="100"  style="position: absolute; top: 900px; left: 50px;">
-		Your browser does not support the HTML 5 Canvas. 
-		</canvas>
-		<canvas id="complement" width="350" height="100"  style="position: absolute; top: 900px; left: 450px;">
-		Your browser does not support the HTML 5 Canvas. 
-		</canvas>
-	</div>
-	<div>
-		<p id="pick">Picked</p>
-		<p id="comp">Complement</p>
-	</div>
-</body>
-</html>

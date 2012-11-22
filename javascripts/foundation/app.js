@@ -68,7 +68,7 @@ var theApp = null;
   // /* Ajax */ Apps
   $(".app > a").click(function(){
   	var appid = $(this).attr('id');
-/*   	alert("apps/" + appid + "/" + appid + ".html"); */
+  	console.log("apps/" + appid + "/" + appid + ".html");
 /*
 	  $.ajax({
 		  url: "apps/book/book.html",

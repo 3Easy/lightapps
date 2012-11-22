@@ -1,3 +1,8 @@
+var defaultLights = [ ["Huey", "huey.local" ], ["Dewey", "dewey.local"], ["Louie", "louie.local" ] ];
+var lights = [null, null, null];		// The array of lights
+var currentLight = null;
+var theApp = null;
+
 ;(function ($, window, undefined) {
   'use strict';
 
@@ -17,7 +22,18 @@
     $.fn.foundationMagellan         ? $doc.foundationMagellan() : null;
     $.fn.foundationClearing         ? $doc.foundationClearing() : null;
 
-    $('input, textarea').placeholder();
+    //$('input, textarea').placeholder();
+
+	// Create and setup the current lights
+	//console.log(defaultLights.length);
+	for (var j=0; j < defaultLights.length; j++) {
+		//console.log(defaultLights[j][1]);
+		lights[j] = new Light(defaultLights[j][1]);
+		//console.log(lights[j]);
+	}
+	currentLight = lights[0];
+	//console.log(currentLight);
+
   });
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
@@ -59,8 +75,16 @@
 		});
 */
 	  $("#" + appid + "-app").reveal();
+	  loadapp(appid);
   });
     
   // Last One Out, Turn Out The Lights :)
 
 })(jQuery, this);
+
+function loadapp(theid) {
+	  console.log(theid);
+	  evalstr = "theApp = new " + theid + "()";
+	  eval(evalstr);
+	  theApp.appStart();
+}

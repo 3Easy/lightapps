@@ -60,6 +60,9 @@ var theApp = null;
   $('.light').click(function(){
 	  $('.light').removeClass('selected');
 	  $(this).addClass('selected');
+	  var selection = $(this).attr('id');
+	  // console.log(selection);
+	  currentLight = lights[selection];
   });
   
   // /* Ajax */ Apps
@@ -82,6 +85,7 @@ var theApp = null;
 
 })(jQuery, this);
 
+// Load App
 function loadapp(theid) {
 	  console.log(theid);
 	  evalstr = "theApp = new " + theid + "()";

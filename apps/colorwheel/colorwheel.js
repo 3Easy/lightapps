@@ -2,7 +2,7 @@
 
 function colorwheel() {
 	
-	console.log("Colorwheeeeeeel")
+	//console.log("Colorwheeeeeeel")
 
 	this.theCanvas = document.getElementById('canvas');
 	this.context = this.theCanvas.getContext('2d');
@@ -19,11 +19,6 @@ function colorwheel() {
 	this.compG = 0;
 	this.compB = 0;
 	
-	this.tileSheet=new Image();
-	this.tileSheet.addEventListener('load', this.eventSheetLoaded , false);
-	this.tileSheet.src="apps/colorwheel/color_wheel.png";
-	//console.log(this.tileSheet.src);
-	
 	this.appStart = appStart;
 	this.appQuit = appQuit;
 	this.drawTileSheet = drawTileSheet;
@@ -35,19 +30,20 @@ function colorwheel() {
 	this.eventSheetLoaded = eventSheetLoaded;
 	
 	function eventSheetLoaded() {
-		console.log("loadededed");
+		theApp.drawTileSheet();		// Ensures the image is only drawn after it gets loaded
 	}
 		
 	function appStart() {
-		this.drawTileSheet();
+		this.tileSheet=new Image();
+		$(this.tileSheet).load(eventSheetLoaded);
+		this.tileSheet.src="apps/colorwheel/color_wheel.png";
 	}
 	
 	function appQuit() {
 	}
 	
 	function drawTileSheet() {
-		this.context.drawImage(this.tileSheet, 0, 0);
-		
+		this.context.drawImage(this.tileSheet, 0, 0);	
 	}
 	
 	function fillpick(red, green, blue){

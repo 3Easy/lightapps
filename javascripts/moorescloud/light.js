@@ -19,6 +19,7 @@ function Light(address) {
 	this.setlamp = setlamp;
 	this.gradient = gradient;
 	this.sendcmd = sendcmd;
+	this.sendcmdparam = sendcmdparam;
 	this.setlights = setlights;
 	this.setbulb = setbulb;
 	this.bulbs = [ "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", 
@@ -147,6 +148,22 @@ function Light(address) {
 	function sendcmd(cmdname) {
 		$.ajax({
 			url: this.urlbase + '/cgi-bin/' + cmdname		
+		});
+	}
+
+	// Issue some sort of command via cgi-bin
+	// This is potentially hugely unsafe.  Possibly.	
+	// With this one, we're sending some datas along
+	// Just, you know, to keep things interesting.
+	//
+	function sendcmdparam(cmdname, paramname, paramval) {
+		var kps = "{"+ paramname +":" + paramval + "}";
+		console.log(kps);
+		var kp = eval("kps");
+		console.log(kp);
+		$.ajax({
+			url: this.urlbase + '/cgi-bin/' + cmdname,	
+			data: paramname + "=" + paramval	
 		});
 	}
 }

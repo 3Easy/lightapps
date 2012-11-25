@@ -72,15 +72,17 @@
 				<div class="one column">
 				</div>
 				<div class="two columns">
-					<div class="app off">
+					<div class="app">
 						<a id="book">
 							<img src="images/apps/app-book.png" alt="book app icon" />
 						</a>
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-flame.png" alt="flame app icon" />
+					<div class="app">
+						<a id="countdown">
+							<img src="images/apps/app-colorwheel.png" alt="colorwheel app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -280,6 +282,24 @@
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Sentimental App -->
+
+	<!-- Countdown App -->
+	<script src="apps/countdown/countdown.js"></script>
+	<link rel="stylesheet" href="apps/countdown/countdown.css">
+	<div id="countdown-app" class="reveal-modal expand">
+		<canvas id="countdown-canvas" width="650" height="400"  style="position: absolute; top: 50px; left: 50px;">
+				Your browser does not support the HTML 5 Canvas. 
+		</canvas>
+		<form style="position: absolute; top: 350px; left: 30px; font-size: 32px;">
+		<button class="countdown-button" type="button" onclick="countdown_startbutton()" style="background: #009000">Start</button>
+		<button class="countdown-button" type="button" onclick="countdown_stopbutton()" style="background: #e00000">Stop</button>
+		<button class="countdown-button" type="button" onclick="countdown_resetbutton()" style="background: #0000e0; width: 110px;">Reset</button>
+		<input id="countdown-secval" type="text" oninput="countdown_secinput()" value="300" size="5" style="font-size: 32px;">seconds</input>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Countdown App -->
+
 
 	<script src="javascripts/foundation/jquery.js"></script>
 <!-- 	<script src="javascripts/foundation/jquery.cookie.js"></script> -->

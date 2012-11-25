@@ -94,7 +94,7 @@ function countdown() {
 }
 
 function countdown_startbutton(e) {
-	console.log("startbutton");
+	console.log("countdown_startbutton");
 	theApp.counter=setInterval(theApp.timer, 1000); //1000 will  run it every 1 second
 	if (theApp.count == theApp.startcount) {
 		theApp.startLight();
@@ -102,19 +102,19 @@ function countdown_startbutton(e) {
 }
 
 function countdown_resetbutton(e) {
-	console.log("resetbutton");
+	console.log("countdown_resetbutton");
 	clearInterval(theApp.counter);
 	theApp.resetCountdown();
 }
 
 function countdown_stopbutton(e) {
-	console.log("stopbutton");
+	console.log("countdown_stopbutton");
 	clearInterval(theApp.counter);
 }
 
 function countdown_secinput(e) {
-	console.log("secinput");
-	theApp.startcount = parseInt($("#secval").val());
+	console.log("countdown_secinput");
+	theApp.startcount = parseInt($("#countdown-secval").val());
 	console.log(theApp.startcount);
 	theApp.resetCountdown();
 }

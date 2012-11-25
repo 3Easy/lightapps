@@ -86,8 +86,10 @@
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+					<div class="app">
+						<a id="holiday">
+							<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -299,6 +301,19 @@
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Countdown App -->
+
+	<!-- Holiday App -->
+	<script src="apps/holiday/holiday.js"></script>
+	<link rel="stylesheet" href="apps/holiday/holiday.css">
+	<div id="holiday-app" class="reveal-modal expand">
+		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
+		<button class="holiday-button" type="button" onclick="holiday_startbutton()" style="background: #009000">Start</button>
+		<button class="holiday-button" type="button" onclick="holiday_stopbutton()" style="background: #e00000">Stop</button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Holiday App -->
+
 
 
 	<script src="javascripts/foundation/jquery.js"></script>

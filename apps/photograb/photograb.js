@@ -39,12 +39,17 @@ function photograb() {
 
 	
 	function onSampMouseMove(e) {
-		theApp.mouseX = e.clientX - theApp.theCanvas.offsetLeft;
-		theApp.mouseY = e.clientY - theApp.theCanvas.offsetTop;	      
+		theApp.mouseX = e.clientX - (theApp.theCanvas.offsetLeft + $(theApp.theCanvas).parent().parent()[0].offsetLeft);
+		theApp.mouseY = e.clientY - (theApp.theCanvas.offsetTop + $(theApp.theCanvas).parent().parent()[0].offsetTop);	      
 	}
 	
 	function onSampMouseClick(e) {
-		console.log("click: " + theApp.mouseX + "," + theApp.mouseY);
+		console.log("event at: " + e.clientX + "," + e.clientY);
+		console.log($(theApp.theCanvas).parent().parent()[0].offsetLeft);
+		console.log("canvas at: " + theApp.theCanvas.offsetLeft + "," + theApp.theCanvas.offsetTop);
+		theApp.mouseX = e.clientX - (theApp.theCanvas.offsetLeft + $(theApp.theCanvas).parent().parent()[0].offsetLeft);
+		theApp.mouseY = e.clientY - (theApp.theCanvas.offsetTop + $(theApp.theCanvas).parent().parent()[0].offsetTop);	   
+		console.log("click: " + theApp.mouseX + "," + theApp.mouseY);   
 		imageData = theApp.context.getImageData(theApp.mouseX,theApp.mouseY,1,1);
 		var red = (imageData.data[0] >> 1) | 0x80;
 		var green = (imageData.data[1] >> 1) | 0x80;
@@ -56,8 +61,8 @@ function photograb() {
 	function onSampTouchStart(e) {
 		var touch = e.touches[0];
 		console.log("onTouchStart", touch.clientX, touch.clientY );
-		theApp.mouseX = touch.clientX - theApp.theCanvas.offsetLeft;
-		theApp.mouseY = touch.clientY - theApp.theCanvas.offsetTop;
+		theApp.mouseX = touch.clientX - (theApp.theCanvas.offsetLeft + $(theApp.theCanvas).parent().parent()[0].offsetLeft);
+		theApp.mouseY = touch.clientY - (theApp.theCanvas.offsetTop + $(theApp.theCanvas).parent().parent()[0].offsetTop);
 		console.log("touch: " + theApp.mouseX + "," + theApp.mouseY);
 		imageData = theApp.context.getImageData(theApp.mouseX,theApp.mouseY,1,1);
 		var red = (imageData.data[0] >> 1) | 0x80;

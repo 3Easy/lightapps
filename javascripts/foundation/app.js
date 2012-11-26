@@ -103,8 +103,8 @@ function loadApp(theid) {
 
 // App Quit
 function quitApp(theid) {
-	evalstr = "theApp = new " + theid + "()";
-	eval(evalstr);
+	//evalstr = "theApp = new " + theid + "()";
+	//eval(evalstr);
 	theApp.appQuit();
 	theApp = null;
 }

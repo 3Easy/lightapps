@@ -30,13 +30,17 @@
 				<div class="one column">
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app.png" alt="candle app icon" />
+					<div class="app">
+						<a id="candle">
+							<img src="images/apps/app.png" alt="candle app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-flame.png" alt="flame app icon" />
+					<div class="app">
+						<a id="flame">
+							<img src="images/apps/app-flame.png" alt="flame app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -68,20 +72,24 @@
 				<div class="one column">
 				</div>
 				<div class="two columns">
-					<div class="app off">
+					<div class="app">
 						<a id="book">
 							<img src="images/apps/app-book.png" alt="book app icon" />
 						</a>
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-flame.png" alt="flame app icon" />
+					<div class="app">
+						<a id="countdown">
+							<img src="images/apps/app-colorwheel.png" alt="colorwheel app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-photograb.png" alt="photograb app icon" />
+					<div class="app">
+						<a id="holiday">
+							<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -190,11 +198,33 @@
 		</div>
 	</div>
 	
-	
+	<!-- Candle App -->
+	<script src="apps/candle/candle.js"></script>
+	<link rel="stylesheet" href="apps/candle/candle.css">
+	<div id="candle-app" class="reveal-modal expand">
+		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
+		<button class="candle-button" type="button" onclick="candle_startbutton()" style="background: #009000">Start</button>
+		<button class="candle-button" type="button" onclick="candle_stopbutton()" style="background: #e00000">Stop</button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Candle App -->	
+
+	<!-- Flame App -->
+	<script src="apps/flame/flame.js"></script>
+	<link rel="stylesheet" href="apps/flame/flame.css">
+	<div id="flame-app" class="reveal-modal expand">
+		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
+		<button class="flame-button" type="button" onclick="flame_startbutton()" style="background: #009000">Start</button>
+		<button class="flame-button" type="button" onclick="flame_stopbutton()" style="background: #e00000">Stop</button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Flame App -->
 	
 	<!-- Book App -->
 	<script src="apps/book/book.js"></script>
-	<link rel="stylesheet" href="apps/book/book.css">
+	<!--<link rel="stylesheet" href="apps/book/book.css">-->
 	<div id="book-app" class="reveal-modal expand">
 		<h2 class="text-centre">Learn Your Colours</h2>
 		<div>
@@ -230,19 +260,62 @@
 	<div id="photograb-app" class="reveal-modal expand">
 		<h2 class="text-centre">Photo Grab</h2>
 		<div>
-		<canvas id="canvas" width="200" height="300"  style="position: absolute; top: 0px; left: 0px;">
+		<canvas id="photograb-canvas" width="780" height="1000"  style="position: absolute; top: 0px; left: 0px;">
 			 Your browser does not support the HTML 5 Canvas. 
 		</canvas>
 		</div>
 		<form style="position: absolute; top: 450px; left: 300px;">
-			<input class="button" id='pic' type="file" accept="image/*" capture="camera" onchange="handlefiles(this.files)">
+			<input class="photograb-button" id='pic' type="file" accept="image/*" capture="camera" onchange="handlefiles(this.files)">
 		</form>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Photograb App -->
-	
-	
-	
+
+	<!-- Sentimental App -->
+	<script src="apps/sentimental/sentimental.js"></script>
+	<link rel="stylesheet" href="apps/sentimental/sentimental.css">
+	<div id="sentimental-app" class="reveal-modal expand">
+		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
+		Analyze: <input class="sentimental-keyword" id="keyword" type="text" value="bieber" size="15" style="font-size: 32px;"></input>
+		<br/>
+		<button class="sentimental-button" type="button" onclick="sentimental_startbutton()" style="background: #009000">Start</button>
+		<button class="sentimental-button" type="button" onclick="sentimental_stopbutton()" style="background: #e00000">Stop</button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Sentimental App -->
+
+	<!-- Countdown App -->
+	<script src="apps/countdown/countdown.js"></script>
+	<link rel="stylesheet" href="apps/countdown/countdown.css">
+	<div id="countdown-app" class="reveal-modal expand">
+		<canvas id="countdown-canvas" width="650" height="400"  style="position: absolute; top: 50px; left: 50px;">
+				Your browser does not support the HTML 5 Canvas. 
+		</canvas>
+		<form style="position: absolute; top: 350px; left: 30px; font-size: 32px;">
+		<button class="countdown-button" type="button" onclick="countdown_startbutton()" style="background: #009000">Start</button>
+		<button class="countdown-button" type="button" onclick="countdown_stopbutton()" style="background: #e00000">Stop</button>
+		<button class="countdown-button" type="button" onclick="countdown_resetbutton()" style="background: #0000e0; width: 110px;">Reset</button>
+		<input id="countdown-secval" type="text" oninput="countdown_secinput()" value="300" size="5" style="font-size: 32px;">seconds</input>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Countdown App -->
+
+	<!-- Holiday App -->
+	<script src="apps/holiday/holiday.js"></script>
+	<link rel="stylesheet" href="apps/holiday/holiday.css">
+	<div id="holiday-app" class="reveal-modal expand">
+		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
+		<button class="holiday-button" type="button" onclick="holiday_startbutton()" style="background: #009000">Start</button>
+		<button class="holiday-button" type="button" onclick="holiday_stopbutton()" style="background: #e00000">Stop</button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Holiday App -->
+
+
+
 	<script src="javascripts/foundation/jquery.js"></script>
 <!-- 	<script src="javascripts/foundation/jquery.cookie.js"></script> -->
 <!-- 	<script src="javascripts/foundation/jquery.event.move.js"></script> -->

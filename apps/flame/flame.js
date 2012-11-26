@@ -1,7 +1,7 @@
-// candle.js - Run the candle animation
-//
+/*
+	@file: apps/flame/flame.js
+*/
 
-// Every app has an object
 function flame() {
 
 	this.appStart = appStart;

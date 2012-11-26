@@ -2,7 +2,6 @@
 	@file: apps/candle/candle.js
 */
 
-// Every app has an object
 function candle() {
 
 	this.appStart = appStart;

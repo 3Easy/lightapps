@@ -218,11 +218,14 @@
 	<!-- Flame App -->
 	<script src="apps/flame/flame.js"></script>
 	<link rel="stylesheet" href="apps/flame/flame.css">
-	<div id="flame-app" class="reveal-modal expand">
-		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
-		<button class="flame-button" type="button" onclick="flame_startbutton()" style="background: #009000">Start</button>
-		<button class="flame-button" type="button" onclick="flame_stopbutton()" style="background: #e00000">Stop</button>
-		</form>
+	<div id="flame-app" class="reveal-modal large">
+		<h2>Flame Animation</h2>
+			<div class="row">
+				<div class="six columns centered">
+					<a class="radius button start left" onclick="flame_startbutton()">Start</a>
+					<a class="radius button stop right" onclick="flame_stopbutton()">Stop</a>
+				</div>
+			</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Flame App -->

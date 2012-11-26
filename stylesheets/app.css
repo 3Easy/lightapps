@@ -5950,17 +5950,22 @@ a:hover {
   padding: 0 0 30px;
 }
 
-/* line 79, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
+.app:hover {
+  cursor: pointer;
+}
+
+/* line 85, ../sass/app.scss */
 .off img {
   opacity: .33;
 }
 
-/* line 83, ../sass/app.scss */
+/* line 89, ../sass/app.scss */
 .control {
   padding-top: 58px;
 }
 
-/* line 88, ../sass/app.scss */
+/* line 94, ../sass/app.scss */
 .control .light h5 {
   margin-bottom: 7px;
   font-size: 15px;
@@ -5970,13 +5975,13 @@ a:hover {
   bottom: 0;
 }
 
-/* line 99, ../sass/app.scss */
+/* line 105, ../sass/app.scss */
 .control .selected h5 {
   color: white;
 }
 
 /* Reveal Modal */
-/* line 107, ../sass/app.scss */
+/* line 113, ../sass/app.scss */
 .reveal-modal {
   padding-top: 10px;
   background: rgba(0, 0, 0, 0.8);
@@ -5988,13 +5993,13 @@ a:hover {
   border-radius: 10px;
   top: 10px;
 }
-/* line 113, ../sass/app.scss */
+/* line 119, ../sass/app.scss */
 .reveal-modal h2 {
   color: white;
   text-align: center;
 }
 
-/* line 119, ../sass/app.scss */
+/* line 125, ../sass/app.scss */
 .reveal-modal .close-reveal-modal {
   color: #777777;
   font-size: 4rem;
@@ -6003,7 +6008,7 @@ a:hover {
   top: 11px;
   right: 11px;
 }
-/* line 126, ../sass/app.scss */
+/* line 132, ../sass/app.scss */
 .reveal-modal .close-reveal-modal:hover {
   color: white;
   text-decoration: none;

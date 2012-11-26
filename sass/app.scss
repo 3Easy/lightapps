@@ -76,6 +76,12 @@ a {
 	padding: 0 0 30px;
 }
 
+.app {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
 .off img {
 	opacity: .33;
 }

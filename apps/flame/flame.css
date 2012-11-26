@@ -1,12 +1,23 @@
-.flame-button {
-    background: #262C32;
-    font-size: 32px;
-    width: 100px;
-    padding: 9px;
-    letter-spacing: 1px;
-    border: none;
-    color: #EFDDA8;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+/*
+	@file: apps/flame/flame.css
+*/
+
+#flame-app.reveal-modal {
+	top: 110px;
+}
+
+#flame-app a.button:hover {
+	text-decoration: none;
+}
+
+#flame-app a.button {
+	border: 1px solid white;
+}
+
+#flame-app a.button.start {
+	background: orange;
+}
+
+#flame-app a.button.stop {
+	background: blue;
 }

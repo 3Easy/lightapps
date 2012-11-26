@@ -100,8 +100,10 @@
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app-sentimental.png" alt="sentimental app icon" />
+					<div class="app">
+						<a id="uvAU">
+							<img src="images/apps/app-sentimental.png" alt="sentimental app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="one column">
@@ -368,6 +370,37 @@
 	</div>
 	<!-- /TempAU App -->
 
+	<!-- UVAU App -->
+	<script src="apps/uvAU/uvAU.js"></script>
+	<link rel="stylesheet" href="apps/uvAU/uvAU.css">
+	<div id="uvAU-app" class="reveal-modal expand">
+		<img src="apps/uvAU/australia_idle.png" alt="HTML Map" border="0" usemap="#uvAU_cities"/>
+		<map name="uvAU_cities">
+		   <area shape="circle" id="uvAU_syd" 
+					coords="649,414,100"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_mel" 
+					coords="560,473,50"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_tow" 
+					coords="681,315,100"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_adl" 
+					coords="455,428,100"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_mel" 
+					coords="590,553,50"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_dar" 
+					coords="334,81,100"
+					onclick='uvAU_select($(this).attr("id"))' />
+			<area shape="circle" id="uvAU_per" 
+					coords="107,384,100"
+					onclick='uvAU_select($(this).attr("id"))' />
+		</map>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /UVAU App -->
 
 
 	<script src="javascripts/foundation/jquery.js"></script>

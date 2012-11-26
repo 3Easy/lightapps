@@ -94,7 +94,9 @@
 				</div>
 				<div class="two columns">
 					<div class="app">
-						<img src="images/apps/app-colorwheel.png" alt="colorwheel app icon" />
+						<a id ="tempAU">
+							<img src="images/apps/app-colorwheel.png" alt="colorwheel app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -313,6 +315,38 @@
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Holiday App -->
+
+	<!-- TempAU App -->
+	<script src="apps/tempAU/tempAU.js"></script>
+	<link rel="stylesheet" href="apps/tempAU/tempAU.css">
+	<div id="tempAU-app" class="reveal-modal expand">
+		<img src="apps/tempAU/australia_idle.png" alt="HTML Map" border="0" usemap="#tempAU_cities"/>
+		<map name="tempAU_cities">
+		   <area shape="circle" id="tempAU_Syd" 
+					coords="649,414,100"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Mel" 
+					coords="560,473,50"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Bne" 
+					coords="681,315,100"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Adl" 
+					coords="455,428,100"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Hob" 
+					coords="590,553,50"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Drw" 
+					coords="334,81,100"
+					onclick='tempAU_select($(this).attr("id"))' />
+			<area shape="circle" id="tempAU_Per" 
+					coords="107,384,100"
+					onclick='tempAU_select($(this).attr("id"))' />
+		</map>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /TempAU App -->
 
 
 

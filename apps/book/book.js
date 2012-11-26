@@ -28,7 +28,7 @@ function book() {
 	}
 	
 	function appQuit() {
-	
+		currentLight.setlamp(0,0,0);	
 	}
 	
 	function loadPage() {

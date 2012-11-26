@@ -1,7 +1,7 @@
-// countdown.js - runs a countdown timer on the Light
-//
+/*
+	@file: apps/countdown/countdown.js
+*/
 
-// Every app has an object
 function countdown() {
 
 	this.appStart = appStart;
@@ -30,7 +30,7 @@ function countdown() {
 	function drawCountdown() {
 		this.context.fillStyle = "black";
 		this.context.fillRect(0, 0, this.theCanvas.width, this.theCanvas.height);
-		this.context.font = "240px serif";
+		this.context.font = "240px 'Droid Sans'";
 		this.context.fillStyle = "white";
 		this.context.fillText(this.secs_to_time(this.count), 15, 180);
 	}

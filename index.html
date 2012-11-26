@@ -232,7 +232,7 @@
 	
 	<!-- Book App -->
 	<script src="apps/book/book.js"></script>
-	<!--<link rel="stylesheet" href="apps/book/book.css">-->
+	<link rel="stylesheet" href="apps/book/book.css">
 	<div id="book-app" class="reveal-modal expand">
 		<h2 class="text-centre">Learn Your Colours</h2>
 		<div>
@@ -268,11 +268,11 @@
 	<div id="photograb-app" class="reveal-modal expand">
 		<h2 class="text-centre">Photo Grab</h2>
 		<div>
-		<canvas id="photograb-canvas" width="780" height="1000"  style="position: absolute; top: 0px; left: 0px;">
-			 Your browser does not support the HTML 5 Canvas. 
-		</canvas>
+			<canvas id="photograb-canvas" width="625" height="416">
+				 Your browser does not support the HTML 5 Canvas. 
+			</canvas>
 		</div>
-		<form style="position: absolute; top: 450px; left: 300px;">
+		<form>
 			<input class="photograb-button" id='pic' type="file" accept="image/*" capture="camera" onchange="handlefiles(this.files)">
 		</form>
 		<a class="close-reveal-modal">&#215;</a>

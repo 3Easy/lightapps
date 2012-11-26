@@ -1,5 +1,6 @@
-// photograb.js - samples a photo, and sends the sampled color to a Light
-//
+/*
+	@file: apps/photograb/photograb.js
+*/
 
 var photograb_img = null;
 

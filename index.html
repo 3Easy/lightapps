@@ -282,13 +282,20 @@
 	<!-- Sentimental App -->
 	<script src="apps/sentimental/sentimental.js"></script>
 	<link rel="stylesheet" href="apps/sentimental/sentimental.css">
-	<div id="sentimental-app" class="reveal-modal expand">
-		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
-		Analyze: <input class="sentimental-keyword" id="keyword" type="text" value="bieber" size="15" style="font-size: 32px;"></input>
-		<br/>
-		<button class="sentimental-button" type="button" onclick="sentimental_startbutton()" style="background: #009000">Start</button>
-		<button class="sentimental-button" type="button" onclick="sentimental_stopbutton()" style="background: #e00000">Stop</button>
-		</form>
+	<div id="sentimental-app" class="reveal-modal large">
+		<h2>Sentimental App</h2>
+			<div class="row">
+				<div class="twelve columns">
+					<label>Analyse:</label>
+					<input class="sentimental-keyword" id="keyword" type="text" value="bieber" size="15" style="font-size: 32px;"></input>
+				</div>
+			</div>
+			<div class="row">
+				<div class="six columns centered">
+					<a class="radius button start left" onclick="sentimental_startbutton()">Start</a>
+					<a class="radius button stop right" onclick="sentimental_stopbutton()">Stop</a>
+				</div>
+			</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Sentimental App -->

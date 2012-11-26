@@ -1,64 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=850" />
-<title>Sentimental</title>
-<script src="jquery.min.js"></script>
-<script type="text/javascript">
-
-window.addEventListener('load', eventWindowLoaded, false);	
-
-function eventWindowLoaded() {
-	return;
-}
-
-function startbutton() {
-	var keyword = $("#keyword").val();
-	console.log($("#keyword").val());
-	jQuery.ajax({
-		url: 'http://dewey.local/cgi-bin/sentimental.sh', 
-		data: { term: keyword }
-	});
-}
-
-function stopbutton() {
-	jQuery.ajax({
-		url: 'http://dewey.local/cgi-bin/sentistop.sh', 
-	});
-}
-
-</script>
-<style>
-.button {
-    background: #262C32;
-    font-size: 32px;
-    width: 100px;
-    padding: 9px;
-    letter-spacing: 1px;
-    border: none;
-    color: #EFDDA8;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-}
-.keyword {
-    background: #003070;
-    font-size: 32px;
-    border: none;
-    color: #EFDDA8;
-}
-</style>
-</head>
-<body text="#FFFFFF" bgcolor="#003070">
-<!--
-<span id="timer"></span>
---->
-<form style="position: absolute; top: 50px; left: 30px; font-size: 32px;">
-Analyze: <input class="keyword" id="keyword" type="text" oninput="secinput()" value="bieber" size="15" style="font-size: 32px;"></input>
-<br/>
-<button class="button" type="button" onclick="startbutton()" style="background: #009000">Start</button>
-<button class="button" type="button" onclick="stopbutton()" style="background: #e00000">Stop</button>
-</form>
-
-</body>
+<!-- Sentimental App -->
+<script src="apps/sentimental/sentimental.js"></script>
+<link rel="stylesheet" href="apps/sentimental/sentimental.css">
+<div id="sentimental-app" class="reveal-modal large">
+	<h2>Sentimental App</h2>
+		<div class="row">
+			<div class="twelve columns">
+				<label>Analyse:</label>
+				<input class="sentimental-keyword" id="keyword" type="text" value="bieber" size="15" style="font-size: 32px;"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns centered">
+				<a class="radius button start left" onclick="sentimental_startbutton()">Start</a>
+				<a class="radius button stop right" onclick="sentimental_stopbutton()">Stop</a>
+			</div>
+		</div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- /Sentimental App -->

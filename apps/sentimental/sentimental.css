@@ -1,18 +1,31 @@
-.sentimental-button {
-    background: #262C32;
-    font-size: 32px;
-    width: 100px;
-    padding: 9px;
-    letter-spacing: 1px;
-    border: none;
-    color: #EFDDA8;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+/*
+	@file: apps/candle/candle.css
+*/
+
+#sentimental-app.reveal-modal {
+	top: 110px;
 }
-.sentimental-keyword {
-    background: #003070;
-    font-size: 32px;
-    border: none;
-    color: #EFDDA8;
+
+#sentimental-app label {
+	color: white;
+}
+
+#sentimental-app input {
+	height: 46px;
+}
+
+#sentimental-app a.button:hover {
+	text-decoration: none;
+}
+
+#sentimental-app a.button {
+	border: 1px solid white;
+}
+
+#sentimental-app a.button.start {
+	background: #e71abf;
+}
+
+#sentimental-app a.button.stop {
+	background: #0095ff;
 }

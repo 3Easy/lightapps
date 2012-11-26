@@ -88,7 +88,7 @@
 				<div class="two columns">
 					<div class="app">
 						<a id="holiday">
-							<img src="images/apps/app-photograbber.png" alt="photograbber app icon" />
+							<img src="images/apps/app-photograb.png" alt="photograb app icon" />
 						</a>
 					</div>
 				</div>
@@ -201,14 +201,17 @@
 	<!-- Candle App -->
 	<script src="apps/candle/candle.js"></script>
 	<link rel="stylesheet" href="apps/candle/candle.css">
-	<div id="candle-app" class="reveal-modal expand">
-		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
-		<button class="candle-button" type="button" onclick="candle_startbutton()" style="background: #009000">Start</button>
-		<button class="candle-button" type="button" onclick="candle_stopbutton()" style="background: #e00000">Stop</button>
-		</form>
+	<div id="candle-app" class="reveal-modal large">
+		<h2>Candle Animation</h2>
+			<div class="row">
+				<div class="six columns centered">
+					<a class="radius button start left" onclick="candle_startbutton()">Start</a>
+					<a class="radius button stop right" onclick="candle_stopbutton()">Stop</a>
+				</div>
+			</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
-	<!-- /Candle App -->	
+	<!-- /Candle App -->
 
 	<!-- Flame App -->
 	<script src="apps/flame/flame.js"></script>

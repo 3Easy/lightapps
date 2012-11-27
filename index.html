@@ -114,8 +114,10 @@
 				<div class="one column">
 				</div>
 				<div class="two columns">
-					<div class="app off">
-						<img src="images/apps/app.png" alt="candle app icon" />
+					<div class="app">
+						<a id="placcel">
+							<img src="images/apps/app.png" alt="candle app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -401,6 +403,21 @@
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /UVAU App -->
+
+	<!-- Placcel App -->
+	<script src="apps/placcel/placcel.js"></script>
+	<link rel="stylesheet" href="apps/placcel/placcel.css">
+	<div id="placcel-app" class="reveal-modal large">
+		<h2>placcel Animation</h2>
+			<div class="row">
+				<div class="six columns centered">
+					<a class="radius button start left" onclick="placcel_startbutton()">Start</a>
+					<a class="radius button stop right" onclick="placcel_stopbutton()">Stop</a>
+				</div>
+			</div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /Placcel App -->
 
 
 	<script src="javascripts/foundation/jquery.js"></script>

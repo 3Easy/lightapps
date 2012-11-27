@@ -1,0 +1,23 @@
+/*
+	@file: apps/placcel/placcel.css
+*/
+
+#placcel-app.reveal-modal {
+	top: 110px;
+}
+
+#placcel-app a.button:hover {
+	text-decoration: none;
+}
+
+#placcel-app a.button {
+	border: 1px solid white;
+}
+
+#placcel-app a.button.start {
+	background: green;
+}
+
+#placcel-app a.button.stop {
+	background: red;
+}

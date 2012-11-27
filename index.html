@@ -122,7 +122,9 @@
 				</div>
 				<div class="two columns">
 					<div class="app">
-						<img src="images/apps/app-flame.png" alt="flame app icon" />
+						<a id="airHK">
+							<img src="images/apps/app-flame.png" alt="flame app icon" />
+						</a>
 					</div>
 				</div>
 				<div class="two columns">
@@ -419,6 +421,58 @@
 	</div>
 	<!-- /Placcel App -->
 
+	<!-- AirHK App -->
+	<script src="apps/airHK/airHK.js"></script>
+	<link rel="stylesheet" href="apps/airHK/airHK.css">
+	<div id="airHK-app" class="reveal-modal expand">
+		<img src="apps/airHK/hongkong-map.jpg" alt="HTML Map" border="0" usemap="#airHK_sites"/>
+		<map name="airHK_sites">
+		   <area shape="circle" id="airHK_Causeway Bay" 
+					coords="459, 418, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Central" 
+					coords="425, 410, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Mong Kok" 
+					coords="358, 326, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Central/Western" 
+					coords="387, 425, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Eastern" 
+					coords="570, 411,25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Kwai Chung" 
+					coords="360, 327,25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Kwun Tong" 
+					coords="371, 305,25"
+					onclick='airHK_select($(this).attr("id"))' />
+ 			<area shape="circle" id="airHK_Sha Tin" 
+					coords="452, 217, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Sham Shui Po" 
+					coords="386, 350, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Tai Po" 
+					coords="400, 193, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Tap Mun" 
+					coords="739, 13, 25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Tsuen Wan" 
+					coords="347, 307,25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Tung Chung" 
+					coords="133, 451,25"
+					onclick='airHK_select($(this).attr("id"))' />
+			<area shape="circle" id="airHK_Yuen Long" 
+					coords="165, 196,25"
+					onclick='airHK_select($(this).attr("id"))' />
+		</map>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- /AirHK App -->
 
 	<script src="javascripts/foundation/jquery.js"></script>
 <!-- 	<script src="javascripts/foundation/jquery.cookie.js"></script> -->

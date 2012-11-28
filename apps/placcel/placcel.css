@@ -15,9 +15,9 @@
 }
 
 #placcel-app a.button.start {
-	background: green;
+	background: #00ff4c;
 }
 
 #placcel-app a.button.stop {
-	background: red;
+	background: #ff1414;
 }

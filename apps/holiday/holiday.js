@@ -30,7 +30,7 @@ function holiday() {
 	}
 	
 	function randcv() { 
-		return Math.floor((Math.random()*32)+1); 
+		return Math.floor((Math.random()*127)+1); 
 	}
 	
 	function timer() {

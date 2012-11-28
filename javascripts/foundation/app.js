@@ -1,4 +1,4 @@
-var defaultLights = [ ["Huey", "huey.local" ], ["Dewey", "dewey.local"], ["Louie", "louie.local" ] ];
+var defaultLights = [ ["Huey", "huey.local" ], ["Dewey", "dewey.local"], ["Phooey", "phooey.local" ] ];
 var lights = [null, null, null];		// The array of lights
 var currentLight = null;
 var theApp = null;

@@ -53,7 +53,7 @@ var theApp = null;
   
   // App Click
   $('.app').click(function(){
-	  $(this).toggleClass('off');
+/* 	  $(this).toggleClass('off'); */
   });
     
   // Light Selected

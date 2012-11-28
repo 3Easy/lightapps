@@ -93,9 +93,9 @@
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
+					<div class="app">
 						<a id ="tempAU">
-							<img src="images/apps/app-placeholder.png" alt="placeholder app icon" />
+							<img src="images/apps/app-temperature.png" alt="temperature app icon" />
 						</a>
 					</div>
 				</div>
@@ -211,7 +211,7 @@
 						</div>
 						<div class="four columns">
 							<div class="light" id="2">
-								<img src="images/apps/light-right-off.png" alt="control panel light" />
+								<img src="images/apps/light-right-on.png" alt="control panel light" />
 								<h5>Louie</h5>
 							</div>
 						</div>
@@ -365,9 +365,10 @@
 	<script src="apps/tempAU/tempAU.js"></script>
 	<link rel="stylesheet" href="apps/tempAU/tempAU.css">
 	<div id="tempAU-app" class="reveal-modal expand">
-		<img src="apps/tempAU/australia_idle.png" alt="HTML Map" border="0" usemap="#tempAU_cities"/>
+		<h2>TemperatureAU App</h2>
+		<img src="apps/tempAU/australia.png" alt="Australia Map" usemap="#tempAU_cities"/>
 		<map name="tempAU_cities">
-		   <area shape="circle" id="tempAU_Syd" 
+			<area shape="circle" id="tempAU_Syd" 
 					coords="649,414,100"
 					onclick='tempAU_select($(this).attr("id"))' />
 			<area shape="circle" id="tempAU_Mel" 

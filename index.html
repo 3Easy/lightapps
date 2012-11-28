@@ -22,7 +22,7 @@
 			
 			<div class="row name">
 				<div class="twelve columns">
-					<h3 class="text-center">La Cabaña De Luz</h3>
+					<h3 class="text-center">Cabaña De Luz</h3>
 				</div>
 			</div>
 			
@@ -100,9 +100,9 @@
 					</div>
 				</div>
 				<div class="two columns">
-					<div class="app off">
+					<div class="app">
 						<a id="uvAU">
-							<img src="images/apps/app-placeholder.png" alt="placeholder app icon" />
+							<img src="images/apps/app-uv.png" alt="uv-index app icon" />
 						</a>
 					</div>
 				</div>
@@ -394,13 +394,14 @@
 	</div>
 	<!-- /TempAU App -->
 
-	<!-- UVAU App -->
+	<!-- uvAU App -->
 	<script src="apps/uvAU/uvAU.js"></script>
 	<link rel="stylesheet" href="apps/uvAU/uvAU.css">
 	<div id="uvAU-app" class="reveal-modal expand">
-		<img src="apps/uvAU/australia_idle.png" alt="HTML Map" border="0" usemap="#uvAU_cities"/>
+		<h2>UV Index App</h2>
+		<img src="apps/uvAU/australia.png" alt="Australia Map" usemap="#uvAU_cities"/>
 		<map name="uvAU_cities">
-		   <area shape="circle" id="uvAU_syd" 
+			<area shape="circle" id="uvAU_syd" 
 					coords="649,414,100"
 					onclick='uvAU_select($(this).attr("id"))' />
 			<area shape="circle" id="uvAU_mel" 

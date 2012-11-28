@@ -81,14 +81,14 @@
 				<div class="two columns">
 					<div class="app">
 						<a id="countdown">
-							<img src="images/apps/app-colorwheel.png" alt="colorwheel app icon" />
+							<img src="images/apps/app-countdown.png" alt="countdown app icon" />
 						</a>
 					</div>
 				</div>
 				<div class="two columns">
 					<div class="app">
 						<a id="holiday">
-							<img src="images/apps/app-photograb.png" alt="photograb app icon" />
+							<img src="images/apps/app-holiday.png" alt="holiday app icon" />
 						</a>
 					</div>
 				</div>
@@ -210,7 +210,7 @@
 	<script src="apps/candle/candle.js"></script>
 	<link rel="stylesheet" href="apps/candle/candle.css">
 	<div id="candle-app" class="reveal-modal large">
-		<h2>Candle Animation</h2>
+		<h2>Candle Animation App</h2>
 			<div class="row">
 				<div class="six columns centered">
 					<a class="radius button start left" onclick="candle_startbutton()">Start</a>
@@ -225,7 +225,7 @@
 	<script src="apps/flame/flame.js"></script>
 	<link rel="stylesheet" href="apps/flame/flame.css">
 	<div id="flame-app" class="reveal-modal large">
-		<h2>Flame Animation</h2>
+		<h2>Flame Animation App</h2>
 			<div class="row">
 				<div class="six columns centered">
 					<a class="radius button start left" onclick="flame_startbutton()">Start</a>
@@ -240,7 +240,7 @@
 	<script src="apps/book/book.js"></script>
 	<link rel="stylesheet" href="apps/book/book.css">
 	<div id="book-app" class="reveal-modal expand">
-		<h2 class="text-centre">Learn Your Colours</h2>
+		<h2 class="text-centre">Learn Your Colours App</h2>
 		<div>
 			<img id="content" />
 		</div>
@@ -252,7 +252,7 @@
 	<script src="apps/colorwheel/colorwheel.js"></script>
 	<link rel="stylesheet" href="apps/colorwheel/colorwheel.css">
 	<div id="colorwheel-app" class="reveal-modal expand">
-		<h2 class="text-centre">Colorwheel</h2>
+		<h2 class="text-centre">Colorwheel App</h2>
 		<div>
 			<canvas id="colorwheel_canvas" width="625" height="625">
 				Your browser does not support the HTML 5 Canvas. 
@@ -272,7 +272,7 @@
 	<script src="apps/photograb/photograb.js"></script>
 	<link rel="stylesheet" href="apps/photograb/photograb.css">
 	<div id="photograb-app" class="reveal-modal expand">
-		<h2 class="text-centre">Photo Grab</h2>
+		<h2 class="text-centre">Photo Grab App</h2>
 		<div>
 			<canvas id="photograb-canvas" width="625" height="416">
 				 Your browser does not support the HTML 5 Canvas. 
@@ -333,11 +333,14 @@
 	<!-- Holiday App -->
 	<script src="apps/holiday/holiday.js"></script>
 	<link rel="stylesheet" href="apps/holiday/holiday.css">
-	<div id="holiday-app" class="reveal-modal expand">
-		<form style="position: absolute; top: 150px; left: 30px; font-size: 32px;">
-		<button class="holiday-button" type="button" onclick="holiday_startbutton()" style="background: #009000">Start</button>
-		<button class="holiday-button" type="button" onclick="holiday_stopbutton()" style="background: #e00000">Stop</button>
-		</form>
+	<div id="holiday-app" class="reveal-modal large">
+		<h2>Holiday App</h2>
+		<div class="row">
+			<div class="six columns centered">
+				<a class="radius button start left" onclick="holiday_startbutton()">Start</a>
+				<a class="radius button stop right" onclick="holiday_stopbutton()">Stop</a>
+			</div>
+		</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- /Holiday App -->

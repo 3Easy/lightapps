@@ -1,51 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=850" />
-<title>Holiday</title>
-<script src="jquery.min.js"></script>
-<script src="light.js"></script>
-<script type="text/javascript">
-//JS - Works like a charm
-
-function randcv() { 
-	return Math.floor((Math.random()*32)+1); 
-}
-
-var light = new Light("");
-var counter;
-
-document.addEventListener("DOMContentLoaded", init, false);
-
-function init() {
-	wunderlights();
-	counter=setInterval(timer, 1000); // 5000 will  run it every 5 seconds
-}
-
-function timer() {
-	wunderlights();
-}
-
-function wunderlights() {
-
-	var c = [0, 0, 0];
-	for (var j = 0; j < 52; j++ ) {
-		c[0] = randcv();
-		c[1] = randcv();
-		c[2] = randcv();
-		var index = Math.floor((Math.random()*2)+1);
-		c[index] = 0;
-		//light.setbulb(c[0], c[1], c[2], j);
-		light.fastset(c[0], c[1], c[2], j);
-	}
-	//light.setlights();
-	light.fastlights();
-
-}
-</script>
-</head>
-<body bgcolor="#FFFFFF">
-
-</body>
-</html>
+<!-- Holiday App -->
+<script src="apps/holiday/holiday.js"></script>
+<link rel="stylesheet" href="apps/holiday/holiday.css">
+<div id="holiday-app" class="reveal-modal large">
+	<h2>Holiday App</h2>
+	<div class="row">
+		<div class="six columns centered">
+			<a class="radius button start left" onclick="holiday_startbutton()">Start</a>
+			<a class="radius button stop right" onclick="holiday_stopbutton()">Stop</a>
+		</div>
+	</div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- /Holiday App -->

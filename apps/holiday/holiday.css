@@ -1,3 +1,28 @@
+/*
+	@file: apps/holiday/holiday.css
+*/
+
+#holiday-app.reveal-modal {
+	top: 110px;
+}
+
+#holiday-app a.button:hover {
+	text-decoration: none;
+}
+
+#holiday-app a.button {
+	border: 1px solid white;
+}
+
+#holiday-app a.button.start {
+	background: #ff31f4;
+}
+
+#holiday-app a.button.stop {
+	background: #8046e3;
+}
+
+/*
 .holiday-button {
     background: #262C32;
     font-size: 32px;
@@ -10,3 +35,4 @@
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
 }
+*/

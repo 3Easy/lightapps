@@ -16,9 +16,6 @@ function sentimental() {
 	
 	function appQuit() {
 		console.log("sentimental.appQuit");
-		if (this.running) {
-			this.stopbutton();
-		}
 	}
 }
 

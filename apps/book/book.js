@@ -19,8 +19,8 @@ function book() {
 	
 	function appStart() {
 	
-		$("#content").bind('click', this.onMouseClick);
-		console.log($("#content"));
+		$("#book_content").bind('click', this.onMouseClick);
+		console.log($("#book_content"));
 		//$("#content").removeAttr("src").attr("src", "Cover.jpg");
 		this.loadPage();
 		this.lightUp(this.onPage);
@@ -34,7 +34,7 @@ function book() {
 	function loadPage() {
 		fn = "apps/book/" + this.onPage.toString() + ".jpg";
 		console.log("loading " + fn);
-		$("#content").removeAttr("src").attr("src", fn);
+		$("#book_content").removeAttr("src").attr("src", fn);
 	}
 
 	function lightUp(n) {
@@ -51,7 +51,10 @@ function book() {
 		
 		// Assuming page width of 980 here
 		// If less than 440, go back, otherwise go forward
-		if (e.clientX < 440) {
+		// How do we get the page width?
+		var w = $("#book_content").parent().parent().parent().width();
+		console.log("image width is " + w);
+		if (e.clientX < w/2) {
 			if (theApp.onPage > 0) {
 				console.log("backward");
 				theApp.onPage = theApp.onPage - 1;	

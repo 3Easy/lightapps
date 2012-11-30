@@ -9,6 +9,7 @@ function uvAU() {
 	
 	function appStart() {
 		console.log("uvAU.appStart");
+		$("#uvAU_title").html("UV Index");
 	}
 	
 	function appQuit() {
@@ -19,6 +20,7 @@ function uvAU() {
 function uvAU_select(c) {
 	city = c.slice(5);
 	console.log("uvAU_select " + city);
+	$("#uvAU_title").html("Getting UV level in " + city + "...");
 	currentLight.sendcmdparam("uvAU.py", "city", city);
 }
 
